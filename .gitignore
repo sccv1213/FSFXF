@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# 测试产物(自动生成,可清理)
+test_修复.mp4
+test_*_out.mp4
+*.tmp/
+
+# 渲染临时目录
+/tmp/
+
+# 用户保存的模板(运行产物,不入库)
+templates/
+# 测试用视频(本地保留,不入库)
+/test.mp4
+/test-*.mp4
+
+# 本项目 Python 虚拟环境/安装工具
+.venv/
+.python/
+.tools/
+# 渲染控制器临时目录
+/fenshenfu_*/
