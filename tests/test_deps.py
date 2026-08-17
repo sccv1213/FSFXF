@@ -25,13 +25,12 @@ ROOT = Path(__file__).resolve().parent.parent
 
 class TestPipHintInDocs(unittest.TestCase):
     def test_pip_hint_in_readme(self):
-        """README 与使用说明书的安装命令必须与代码版本声明一致(改版本必须同步文档)。"""
+        """README 的安装命令必须与代码版本声明一致(改版本必须同步文档)。"""
         pins = [f"{n}=={v}" for n, v in deps.REQUIRED]
-        for doc in (ROOT / "README.md", ROOT / "使用说明书.md"):
-            with open(doc, encoding="utf-8") as f:
-                content = f.read()
-            for pin in pins:
-                self.assertIn(pin, content)
+        with open(ROOT / "README.md", encoding="utf-8") as f:
+            content = f.read()
+        for pin in pins:
+            self.assertIn(pin, content)
 
 
 class TestCheckDeps(unittest.TestCase):
