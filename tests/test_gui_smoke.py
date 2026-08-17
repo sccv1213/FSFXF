@@ -234,7 +234,7 @@ class TestDecoderSmoke(unittest.TestCase):
         subprocess.run(
             ["ffmpeg", "-hide_banner", "-y", "-f", "lavfi", "-i",
              "testsrc2=size=320x180:rate=30:duration=2",
-             "-vf", "select='not(mod(n,3))'", "-vsync", "vfr",
+             "-vf", "select='not(mod(n,3))'", "-fps_mode", "vfr",
              "-c:v", "libx264", "-pix_fmt", "yuv420p", video],
             capture_output=True, check=True)
 
