@@ -119,7 +119,7 @@ class TestDecoderSmoke(unittest.TestCase):
         worker.open(self.video)
         worker.seek(1.5)
 
-        hook, loop = self._run_until(lambda: len(frames) >= 1 and len(seeked) >= 1)
+        hook, loop = self._run_until(lambda *a: len(frames) >= 1 and len(seeked) >= 1)
         worker.frameReady.connect(hook.check)
         worker.seekDone.connect(hook.check)
 
